@@ -153,14 +153,11 @@ Scanner sc=new Scanner(System.in);
 	
 		// TODO Auto-generated method stub
 		System.out.println("Welcome to the addressbook\n");
-		UserInterface adr = new UserInterface();
-		adr.UserInterfaceFunction();
-		
+		UserInterface UIntFace = new UserInterface();
+		UIntFace.UserInterfaceFunction();		
 		
 
 	}
-
-	
 	
 
 }
@@ -172,10 +169,15 @@ public  void UserInterfaceFunction() {
 		Scanner sc=new Scanner(System.in);
 		
 		AddressBook AddressBookRecord = new AddressBook();
+		int choice;
+		
+		do {
 		System.out.println("1.Add a entry to addressbook");
 		System.out.println("2.Edit a entry of addressbook");
+		System.out.println("3. Delete a entry of addressbook");
+		System.out.println("4. Exit");
 		System.out.println("Enter your choice"); 
-		int choice=sc.nextInt();
+		 choice=sc.nextInt();
 		
 		switch (choice) {
 		case 1: {
@@ -188,7 +190,14 @@ public  void UserInterfaceFunction() {
 			break;
 		}
 		
+		case 3: {
+			AddressBookRecord=null;
+			break;
 		}
+		
+		}
+		
+		}while(choice!=4);
 		
 	}
 }
