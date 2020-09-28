@@ -80,31 +80,12 @@ public class AddressBook {
 
 	
 	
-	
-	
-	public void UserInterface() {
+	public void setDetails() {
 		
-		Scanner sc=new Scanner(System.in);
-		
-		AddressBook AddressBookRecord = new AddressBook();
-		System.out.println("1.Add a entry to addressbook");
-		System.out.println("Enter your choice"); 
-		int choice=sc.nextInt();
-		
-		switch (choice) {
-		case 1: {
-			AddressBookRecord.setDetails();
-		}
-		
-		}
-		
-	}
-	
-	public AddressBook setDetails() {
 		Scanner sc=new Scanner(System.in);
 		
 		System.out.println("Enter your first name");
-		String first_name=sc.nextLine();
+		first_name=sc.nextLine();
 		System.out.println("Enter your last name");
 		String last_name=sc.nextLine();
 		System.out.println("Enter your address/block number/street name ");
@@ -121,25 +102,59 @@ public class AddressBook {
 		System.out.println("Enter your email_id");
 		String email_id=sc.nextLine();
 		
-		AddressBook Address_book_entry=new AddressBook();
-		Address_book_entry.setAddress(address);
-		Address_book_entry.setCity(city);
-		Address_book_entry.setEmail_id(email_id);
-		Address_book_entry.setFirst_name(first_name);
-		Address_book_entry.setLast_name(last_name);
-		Address_book_entry.setPhone_number(phone_number);
-		Address_book_entry.setState(state);
-		Address_book_entry.setZip(zip);
 		
-		return Address_book_entry;
+		setAddress(address);
+		setCity(city);
+		setEmail_id(email_id);
+		setFirst_name(first_name);
+		setLast_name(last_name);
+		setPhone_number(phone_number);
+		setState(state);
+		setZip(zip);
+		
+	}
+	
+	
+	public void editDetails() {
+		
+Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Edit the first name");
+		first_name=sc.nextLine();
+		System.out.println("Edit the last name");
+		String last_name=sc.nextLine();
+		System.out.println("Edit the address/block number/street name ");
+		String address=sc.nextLine();
+		System.out.println("Edit the city");
+		String city=sc.nextLine();
+		System.out.println("Edit the state");
+		String state=sc.nextLine();
+		System.out.println("Edit the zip/pincode");
+		Long zip=sc.nextLong();
+		sc.nextLine();
+		System.out.println("Edit the phone number");
+		String phone_number=sc.nextLine();
+		System.out.println("Edit the email_id");
+		String email_id=sc.nextLine();
+		
+		
+		setAddress(address);
+		setCity(city);
+		setEmail_id(email_id);
+		setFirst_name(first_name);
+		setLast_name(last_name);
+		setPhone_number(phone_number);
+		setState(state);
+		setZip(zip);
+		
 	}
 
 	public static void main(String[] args) {
 	
 		// TODO Auto-generated method stub
 		System.out.println("Welcome to the addressbook\n");
-		AddressBook adr = new AddressBook();
-		adr.UserInterface();
+		UserInterface adr = new UserInterface();
+		adr.UserInterfaceFunction();
 		
 		
 
@@ -148,6 +163,34 @@ public class AddressBook {
 	
 	
 
+}
+
+class UserInterface {
+	
+public  void UserInterfaceFunction() {
+		
+		Scanner sc=new Scanner(System.in);
+		
+		AddressBook AddressBookRecord = new AddressBook();
+		System.out.println("1.Add a entry to addressbook");
+		System.out.println("2.Edit a entry of addressbook");
+		System.out.println("Enter your choice"); 
+		int choice=sc.nextInt();
+		
+		switch (choice) {
+		case 1: {
+			AddressBookRecord.setDetails();
+			break;
+		}
+		
+		case 2: {
+			AddressBookRecord.editDetails();
+			break;
+		}
+		
+		}
+		
+	}
 }
 
 
